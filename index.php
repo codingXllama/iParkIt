@@ -91,7 +91,7 @@
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
-            <?php include "includes/sideBar.php" ?>
+            <!-- <php include "includes/sideBar.php" ?> -->
 
         </div>
         <!-- /.row -->
