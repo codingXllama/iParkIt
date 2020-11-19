@@ -37,6 +37,9 @@
 
 
                 ?>
+                <li>
+                    <a href="admin">ADMIN</a>
+                </li>
 
 
 
