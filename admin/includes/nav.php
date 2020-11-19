@@ -69,7 +69,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                 <ul class="dropdown-menu alert-dropdown">
                     <li>
@@ -95,19 +95,19 @@
                         <a href="#">View All</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                    </li>
+                    </li> -->
                     <li class="divider"></li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -115,13 +115,23 @@
                 </ul>
             </li>
         </ul>
+
+
+
+
+
+
+
+
+
+
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
                     <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                 </li>
                 <li>
@@ -129,13 +139,36 @@
                 </li>
                 <li>
                     <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                </li>
+
+                <!-- The parking lot drop down -->
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#posts_lot_dropdown"><i class="fa fa-fw fa-arrows-v"></i> Parking Lots<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="posts_lot_dropdown" class="collapse">
+                        <li>
+                            <a href="#">Add Parking Lot</a>
+                        </li>
+                        <li>
+                            <a href="#">View Parking Lot/a>
+                        </li>
+                        <li>
+                            <a href="#">Remove Parking Lot</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                 </li>
+
+
+
+
+
+
+                <!-- Drop Down #2 -->
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
