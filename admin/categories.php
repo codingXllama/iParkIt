@@ -14,7 +14,7 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <h1 class="page-header">
                             Welcome Back Admin
                             <small>Manage Your Parking Lot</small>
@@ -29,7 +29,7 @@
 
 
                 <!-- Category/Ticket Section -->
-                <div class="col-xs-6">
+                <div class="col-xs-3">
 
                     <!-- checking if there is any data in the form -->
                     <?php if (isset($_POST['submit_title'])) {
@@ -83,81 +83,17 @@
                     <!-- End of adding a parking region -->
 
 
-                    <!-- Start of Editing Region Section-->
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label for="cat_title"></label>
-                            <!-- <input type="text" class="form-control" name="cat_title"> -->
-                            <label for="cat_status"></label>
-                            <!-- <input type="text" class="form-control" name="cat_status"> -->
-                            <label for="lot_size"></label>
-                            <!-- <input type="number" class="form-control" name="lot_size"> -->
+                    <!-- adding in the Update region section -->
+                    <?php
 
-                            <?php
+                    if (isset($_GET['edit'])) {
+                        $cat_id = $_GET['edit'];
+                        include "includes/region_update.php";
+                    }
 
-                            if (isset($_GET['edit'])) {
+                    ?>
 
-                                $cat_id = $_GET['edit'];
-
-
-                                //  finding all the categories/regions 
-                                $query = "SELECT * FROM categories where cat_id = $cat_id";
-                                $select_categories_id = mysqli_query($connection, $query);
-                                // Displaying the content in the db
-                                while ($row = mysqli_fetch_assoc($select_categories_id)) {
-                                    $cat_id = $row['cat_id'];
-                                    $cat_title = $row['cat_title'];
-                                    $cat_status = $row['cat_status'];
-                                    $lot_size = $row['lot_size'];
-                            ?>
-                                    <?php echo "<label for='cat_status'>Edit Region</label>" ?>
-                                    <input type="text" class="form-control" name="cat_title" value="<?php
-
-                                                                                                    if (isset($cat_title)) {
-                                                                                                        echo $cat_title;
-                                                                                                    }
-
-
-                                                                                                    ?>">
-                                    <?php echo "<label for='cat_status'>Edit Status</label>" ?>
-                                    <input type="text" class="form-control" name="cat_status" value="<?php
-
-                                                                                                        if (isset($cat_status)) {
-                                                                                                            echo $cat_status;
-                                                                                                        }
-
-
-                                                                                                        ?>">
-                                    <?php echo "<label for='cat_status'>Edit Lot Size</label>" ?>
-                                    <input type="text" placeholder="lot size" class="form-control" name="lot_size" value="<?php
-
-                                                                                                                            if (isset($lot_size)) {
-                                                                                                                                echo $lot_size;
-                                                                                                                            }
-
-
-                                                                                                                            ?>">
-                            <?php }
-                            } ?>
-
-
-
-
-
-
-
-
-
-                        </div>
-
-                        <div class="form-group">
-                            <input class=" btn btn-primary" type="submit" name="submit_title" value="Update Region">
-                        </div>
-                    </form>
-                    <!-- End of Editing a parking region -->
                 </div>
-
-
 
 
 

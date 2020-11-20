@@ -29,7 +29,7 @@ if(mysqli_num_rows($result) > 0)
 else
     
 {
-    
+    // Inserting into a new table   
     $my_query = "INSERT INTO Users (fname, lname, email, pwd) VALUES ('$fname', '$lname', '$email', '$pwd' )";
     
     echo "<br>";
@@ -52,5 +52,3 @@ else
 }
 
 mysqli_close();
-
-?>

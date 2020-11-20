@@ -6,7 +6,7 @@
 $db['db_host'] = "localhost:3307";
 $db['db_user'] = "root";
 $db['db_pass'] = "root";
-$db['db_name'] = "cms";
+$db['db_name'] = "iparkit";
 
 
 // creating constants for our connection array for better security 
