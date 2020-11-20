@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Welcome Back Mrs.Admin
+                            Welcome Back Admin
                             <small>Manage Your Parking Lot</small>
                         </h1>
 
@@ -35,14 +35,15 @@
                     <?php if (isset($_POST['submit_title'])) {
 
                         $cat_title = $_POST['cat_title'];
+                        $cat_status = $_POST['cat_status'];
 
                         // checking if the input is an empty string 
 
-                        if ($cat_title == "" || empty($cat_title)) {
+                        if (($cat_title == "" || empty($cat_title) && ($cat_status == "" || empty($cat_status)))) {
                             echo "This field should not be empty";
                         } else {
-                            $query = "INSERT INTO categories(cat_title)";
-                            $query .= "VALUE('{$cat_title}')";
+                            $query = "INSERT INTO categories(cat_title,cat_status)";
+                            $query .= "VALUE('{$cat_title}','{$cat_status}')";
 
                             $create_category_query = mysqli_query($connection, $query);
 
@@ -68,6 +69,8 @@
                         <div class="form-group">
                             <label for="cat_title">Add Category</label>
                             <input type="text" class="form-control" name="cat_title">
+                            <label for="cat_status">Add Status</label>
+                            <input type="text" class="form-control" name="cat_status">
                         </div>
 
                         <div class="form-group">
@@ -100,6 +103,7 @@
                 <div class="col-xs-6">
 
 
+                    <!-- php to mySQL command is here -->
                     <?php $query = "SELECT * FROM categories";
                     $select_categories = mysqli_query($connection, $query);
                     ?>
@@ -123,12 +127,12 @@
                             while ($row = mysqli_fetch_assoc($select_categories)) {
                                 $cat_id = $row['cat_id'];
                                 $cat_title = $row['cat_title'];
-                                $Availability = $row['Availability'];
+                                $cat_status = $row['cat_status'];
 
 
                                 echo "<td>{$cat_id}</td>";
                                 echo "<td>{$cat_title}</td>";
-                                echo "  <td>{$Availability}</td>";
+                                echo "  <td>{$cat_status}</td>";
                                 echo "<td>Yes</td>";
                                 echo "<tr></tr>";
                             }
