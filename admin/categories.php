@@ -36,14 +36,15 @@
 
                         $cat_title = $_POST['cat_title'];
                         $cat_status = $_POST['cat_status'];
+                        $lot_size = $_POST['lot_size'];
 
                         // checking if the input is an empty string 
 
-                        if (($cat_title == "" || empty($cat_title) && ($cat_status == "" || empty($cat_status)))) {
+                        if (($cat_title == "" || empty($cat_title) && ($cat_status == "" || empty($cat_status)) && ($lot_size == "" || empty($lot_size)))) {
                             echo "This field should not be empty";
                         } else {
-                            $query = "INSERT INTO categories(cat_title,cat_status)";
-                            $query .= "VALUE('{$cat_title}','{$cat_status}')";
+                            $query = "INSERT INTO categories(cat_title,cat_status,lot_size)";
+                            $query .= "VALUE('{$cat_title}','{$cat_status}','{$lot_size}')";
 
                             $create_category_query = mysqli_query($connection, $query);
 
@@ -64,34 +65,96 @@
 
 
 
-                    <!-- This form is responsible for psotinig the cat_title -->
+                    <!-- This form is responsible for posting/ adding Parking region -->
                     <form action="" method="post">
                         <div class="form-group">
-                            <label for="cat_title">Add Category</label>
+                            <label for="cat_title">Add Location</label>
                             <input type="text" class="form-control" name="cat_title">
                             <label for="cat_status">Add Status</label>
                             <input type="text" class="form-control" name="cat_status">
+                            <label for="lot_size">Add Lot Size</label>
+                            <input type="number" class="form-control" name="lot_size">
                         </div>
 
                         <div class="form-group">
-                            <input class=" btn btn-primary" type="submit" name="submit_title" value="Add Category">
+                            <input class=" btn btn-primary" type="submit" name="submit_title" value="Add Location">
                         </div>
                     </form>
-                    <!-- End of posting the cat_title -->
+                    <!-- End of adding a parking region -->
 
 
-                    <!-- Extra form for something else -->
-                    <!-- <form action="" method="post">
+                    <!-- Start of Editing Region Section-->
+                    <form action="" method="post">
                         <div class="form-group">
-                            <label for="cat_title">Add Something</label>
-                            <input type="text" class="form-control" name="submit_status">
+                            <label for="cat_title"></label>
+                            <!-- <input type="text" class="form-control" name="cat_title"> -->
+                            <label for="cat_status"></label>
+                            <!-- <input type="text" class="form-control" name="cat_status"> -->
+                            <label for="lot_size"></label>
+                            <!-- <input type="number" class="form-control" name="lot_size"> -->
+
+                            <?php
+
+                            if (isset($_GET['edit'])) {
+
+                                $cat_id = $_GET['edit'];
+
+
+                                //  finding all the categories/regions 
+                                $query = "SELECT * FROM categories where cat_id = $cat_id";
+                                $select_categories_id = mysqli_query($connection, $query);
+                                // Displaying the content in the db
+                                while ($row = mysqli_fetch_assoc($select_categories_id)) {
+                                    $cat_id = $row['cat_id'];
+                                    $cat_title = $row['cat_title'];
+                                    $cat_status = $row['cat_status'];
+                                    $lot_size = $row['lot_size'];
+                            ?>
+                                    <?php echo "<label for='cat_status'>Edit Region</label>" ?>
+                                    <input type="text" class="form-control" name="cat_title" value="<?php
+
+                                                                                                    if (isset($cat_title)) {
+                                                                                                        echo $cat_title;
+                                                                                                    }
+
+
+                                                                                                    ?>">
+                                    <?php echo "<label for='cat_status'>Edit Status</label>" ?>
+                                    <input type="text" class="form-control" name="cat_status" value="<?php
+
+                                                                                                        if (isset($cat_status)) {
+                                                                                                            echo $cat_status;
+                                                                                                        }
+
+
+                                                                                                        ?>">
+                                    <?php echo "<label for='cat_status'>Edit Lot Size</label>" ?>
+                                    <input type="text" placeholder="lot size" class="form-control" name="lot_size" value="<?php
+
+                                                                                                                            if (isset($lot_size)) {
+                                                                                                                                echo $lot_size;
+                                                                                                                            }
+
+
+                                                                                                                            ?>">
+                            <?php }
+                            } ?>
+
+
+
+
+
+
+
+
+
                         </div>
 
                         <div class="form-group">
-                            <input class=" btn btn-primary" type="submit" name="submit" value="Add Category">
+                            <input class=" btn btn-primary" type="submit" name="submit_title" value="Update Region">
                         </div>
-                    </form> -->
-                    <!-- end of new form -->
+                    </form>
+                    <!-- End of Editing a parking region -->
                 </div>
 
 
@@ -102,40 +165,72 @@
                 <!-- Add Category Form -->
                 <div class="col-xs-6">
 
-
-                    <!-- php to mySQL command is here -->
-                    <?php $query = "SELECT * FROM categories";
-                    $select_categories = mysqli_query($connection, $query);
-                    ?>
-
-
-
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Lot Location</th>
                                 <th>Status</th>
-                                <th>Has Paid</th>
+                                <th>Lot Size</th>
                             </tr>
                         </thead>
                         <tbody>
 
 
+                            <!-- php content goes here -->
+
                             <?php
+
+
+                            //  finding all the categories/regions 
+                            $query = "SELECT * FROM categories";
+                            $select_categories = mysqli_query($connection, $query);
                             // Displaying the content in the db
                             while ($row = mysqli_fetch_assoc($select_categories)) {
                                 $cat_id = $row['cat_id'];
                                 $cat_title = $row['cat_title'];
                                 $cat_status = $row['cat_status'];
+                                $lot_size = $row['lot_size'];
 
 
                                 echo "<td>{$cat_id}</td>";
                                 echo "<td>{$cat_title}</td>";
-                                echo "  <td>{$cat_status}</td>";
-                                echo "<td>Yes</td>";
+                                echo " <td>{$cat_status}</td>";
+                                echo "<td>{$lot_size}</td>";
+                                // Creating the delete get super global, value and key pair to remove a cat_id (parking_location)
+                                //the key name is delete
+                                echo "<td><a href='categories.php?delete={$cat_id}'>Remove Region</a></td>";
+                                echo "<td><a href='categories.php?edit={$cat_id}'>Edit Region</a></td>";
                                 echo "<tr></tr>";
                             }
+
+                            ?>
+
+
+
+                            <?php
+
+                            if (isset($_GET['delete'])) {
+                                $the_cat_id = $_GET['delete'];
+
+
+                                // using mySQL command via php
+                                $query = "DELETE from categories  WHERE cat_id={$the_cat_id}";
+                                $delete_query = mysqli_query($connection, $query);
+                                // refresh the page 
+                                header("Location: categories.php");
+                            }
+
+
+
+
+
+
+
+
+
+
+
 
                             ?>
 

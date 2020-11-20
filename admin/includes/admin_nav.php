@@ -175,13 +175,13 @@
 
 
                 <li>
-                    <a href="../admin/categories.php"><i class="fa fa-fw fa-gear"></i> Categories</a>
+                    <a href="../admin/categories.php"><i class="fa fa-fw fa-globe"></i>Regions</a>
                 </li>
 
                 <!-- Drop Down #2 -->
 
                 <li class="">
-                    <a href="blank-page.html"><i class="fa fa-fw fa-comment"></i> Comments</a>
+                    <a href="blank-page.html"><i class="fa fa-fw fa-comment"></i> Requests</a>
                 </li>
 
 
