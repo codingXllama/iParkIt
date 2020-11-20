@@ -140,37 +140,28 @@
                 <li>
                     <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
                 </li> -->
-                <li>
-                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                </li>
+
 
                 <!-- The parking lot drop down -->
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#posts_lot_dropdown"><i class="fa fa-fw fa-arrows-v"></i> Parking Lots<i class="fa fa-fw fa-caret-down"></i></a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#posts_lot_dropdown"><i class="fa fa-fw fa-car"></i> Parking Lots<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="posts_lot_dropdown" class="collapse">
                         <li>
                             <a href="#">Add Parking Lot</a>
                         </li>
                         <li>
-                            <a href="#">View Parking Lot/a>
+                            <a href="#">View Parking Lot</a>
                         </li>
                         <li>
                             <a href="#">Remove Parking Lot</a>
                         </li>
                     </ul>
                 </li>
+
+
+                <!-- Users Drop down - start -->
                 <li>
-                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                </li>
-
-
-
-
-
-
-                <!-- Drop Down #2 -->
-                <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Users<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
                         <li>
                             <a href="#">Dropdown Item</a>
@@ -180,12 +171,26 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active">
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                </li>
+
+
+
                 <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    <a href="../admin/categories.php"><i class="fa fa-fw fa-gear"></i> Categories</a>
                 </li>
+
+                <!-- Drop Down #2 -->
+
+                <li class="">
+                    <a href="blank-page.html"><i class="fa fa-fw fa-comment"></i> Comments</a>
+                </li>
+
+
+
+                <li class="">
+                    <a href="blank-page.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                </li>
+
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
