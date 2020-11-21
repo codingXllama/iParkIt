@@ -128,9 +128,9 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li>
+                <!-- <li>
                     <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                </li>
+                </li> -->
                 <!-- <li>
                     <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                 </li>
@@ -164,10 +164,10 @@
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Users<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
                         <li>
-                            <a href="#">Dropdown Item</a>
+                            <a href="#">Add Users</a>
                         </li>
                         <li>
-                            <a href="#">Dropdown Item</a>
+                            <a href="#">View Users</a>
                         </li>
                     </ul>
                 </li>
@@ -181,7 +181,7 @@
                 <!-- Drop Down #2 -->
 
                 <li class="">
-                    <a href="blank-page.html"><i class="fa fa-fw fa-comment"></i> Requests</a>
+                    <a href="blank-page.html"><i class="fa fa-fw fa-ticket"></i> Ticket Requests</a>
                 </li>
 
 

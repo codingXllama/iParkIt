@@ -1,7 +1,7 @@
 <!-- used for redirecting piece of data around the page, buffering our requests in the header of the php files -->
 <?php ob_start(); ?>
 <?php include "../includes/db.php" ?>
-
+<?php include "functions.php" ?>
 
 
 
