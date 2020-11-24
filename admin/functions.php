@@ -1,6 +1,20 @@
 <?php
 
 
+// checking if whatever query we want to implement does work  
+function queryChecker($myQuery)
+{
+    global $connection;
+
+
+    if (!$myQuery) {
+        die("QUERY FAILED" . mysqli_error($connection));
+    }
+}
+
+
+
+
 function insert_regions()
 {
 

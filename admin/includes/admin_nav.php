@@ -97,7 +97,7 @@
                 </ul>
             </li> -->
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Osama llama<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -128,29 +128,18 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <!-- <li>
-                    <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                </li> -->
-                <!-- <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                </li>
-                <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                </li>
-                <li>
-                    <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                </li> -->
 
 
                 <!-- The parking lot drop down -->
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#posts_lot_dropdown"><i class="fa fa-fw fa-car"></i> Parking Lots<i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="posts_lot_dropdown" class="collapse">
+
                         <li>
-                            <a href="#">Add Parking Lot</a>
+                            <a href="parkings.php">View Parking Lot</a>
                         </li>
                         <li>
-                            <a href="#">View Parking Lot</a>
+                            <a href="#">Add Parking Lot</a>
                         </li>
                         <li>
                             <a href="#">Remove Parking Lot</a>
