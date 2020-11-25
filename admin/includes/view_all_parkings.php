@@ -80,14 +80,10 @@
 if (isset($_GET['delete'])) {
     $my_parking_id = $_GET['delete'];
 
+    // To remove a parking lot post from the user page and db from the admin panel
+ 
     $query = "delete from posts where post_id = {$my_parking_id}";
     $delete_query = mysqli_query($connection, $query);
-
-
-
-    
-
-
 }
 
 ?>

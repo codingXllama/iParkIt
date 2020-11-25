@@ -44,9 +44,10 @@
                         include "includes/add_parking.php";
                         break;
 
-                    case '100';
-                        echo "Cool";
+                    case 'edit_parking';
+                        include "includes/edit_parking.php";
                         break;
+
                     case '200';
                         echo "Amazing";
                         break;
@@ -62,7 +63,7 @@
                         include "includes/view_all_parkings.php";
                 }
 
-                
+
 
 
 
