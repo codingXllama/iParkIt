@@ -56,6 +56,10 @@
             echo "<td >{$parking_start}</td>";
             echo "<td>{$parking_end}</td>";
 
+
+
+            echo "<td><a href='parkings.php?delete={$parking_id}'>Remove</a></td>";
+
             echo "</tr>";
         }
 
@@ -65,3 +69,25 @@
 
 
 </table>
+
+
+
+
+<!-- Deleting Post -->
+
+<?php
+
+if (isset($_GET['delete'])) {
+    $my_parking_id = $_GET['delete'];
+
+    $query = "delete from posts where post_id = {$my_parking_id}";
+    $delete_query = mysqli_query($connection, $query);
+
+
+
+    
+
+
+}
+
+?>

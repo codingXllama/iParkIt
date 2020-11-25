@@ -1,6 +1,10 @@
 <?php include "includes/admin_header.php" ?>
 
 
+
+
+
+
 <body>
 
     <div id="wrapper">
@@ -57,6 +61,9 @@
                     default:
                         include "includes/view_all_parkings.php";
                 }
+
+                
+
 
 
                 ?>
