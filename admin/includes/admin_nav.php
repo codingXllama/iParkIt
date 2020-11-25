@@ -139,7 +139,7 @@
                             <a href="parkings.php">View Parking Lot</a>
                         </li>
                         <li>
-                            <a href="#">Add Parking Lot</a>
+                            <a href="parkings.php?source=add_parking">Add Parking Lot</a>
                         </li>
                         <li>
                             <a href="#">Remove Parking Lot</a>
