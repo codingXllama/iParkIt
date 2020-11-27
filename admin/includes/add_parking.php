@@ -93,6 +93,18 @@ if (isset($_POST['create_parking'])) {
     </div>
 
 
+    <!-- Start and End Time for the parking slot -->
+    <div class="form-group">
+        <label for="start-time">Start Time: </label>
+        <input id=" start-time" type="time" name="start-time" value="12:00">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <span>
+            <label for="end-time">End Time: </label>
+            <input id=" end-time" type="time" name="end-time" value="12:00">
+        </span>
+    </div>
+
+
 
     <div class="form-group">
         <label for="title">Parking Tags</label>
@@ -101,10 +113,18 @@ if (isset($_POST['create_parking'])) {
 
 
 
+
+
+
+
     <div class="form-group">
 
         <input type="submit" class="btn btn-primary" name="create_parking">
     </div>
+
+
+
+
 
 
 </form>

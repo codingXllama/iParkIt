@@ -57,8 +57,9 @@
             echo "<td>{$parking_end}</td>";
 
 
-
+            echo "<td><a href='parkings.php?source=edit_parking&p_id={$parking_id}'>Edit</a></td>";
             echo "<td><a href='parkings.php?delete={$parking_id}'>Remove</a></td>";
+
 
             echo "</tr>";
         }
@@ -81,7 +82,7 @@ if (isset($_GET['delete'])) {
     $my_parking_id = $_GET['delete'];
 
     // To remove a parking lot post from the user page and db from the admin panel
- 
+
     $query = "delete from posts where post_id = {$my_parking_id}";
     $delete_query = mysqli_query($connection, $query);
 }
